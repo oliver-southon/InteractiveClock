@@ -1,21 +1,34 @@
+// CLOCK
+function currentTime() {
+    var date = new Date(); // create date obj
+    var hour = date.getHours();
+    var min = date.getMinutes();
+    var sec = date.getSeconds();
+    hour = updateTime(hour);
+    min = updateTime(min);
+    sec = updateTime(sec);
 
-//CLOCK
-function startTime() {
-    var today = new Date();
-    var hrs = today.getHours();
-    var min = today.getMinutes();
-    var sec = today.getSeconds();
-    var timeZone = today.getTimezoneOffset();
-    min = checkTime(min);
-    sec = checkTime(sec);
-    document.getElementById("timezone").innerHTML = timezone
-    document.getElementById("clock").innerHTML = hrs + ":" + min + ":" + sec;
-    var t = setTimeout(startTime, 500);
+    document.getElementById("clock").innerText = hour + " : " + min + " : " + sec; // add time to div
+    var t = setTimeout(function(){ currentTime() }, 1000); // setting timer
+
 }
 
-function checkTime(i) {
-    if (i < 10) {
-        i = "0" + i; //adds zero in front of numbers
+function updateTime(k) { // for formatting
+    if (k < 10) {
+        return "0" + k;
     }
-    return i;
+    else {
+        return k;
+    }
 }
+
+function changeFont(name) {
+    if (name == "sans") {
+        document.getElementById("clock").style.fontFamily = "sans-serif"
+    }
+    else if (name == "orb") {
+        document.getElementById("clock").style.fontFamily = "Orbitron"
+    }
+}
+
+currentTime();

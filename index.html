@@ -2,29 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clock</title>
     <link rel="stylesheet" href="style.css"> 
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Orbitron">
+    <title>Document</title>
 </head>
-<body onload="startTime()">
-    <div class="grid-container">
-        <div class="header">
+<body>
+    <div class="container">
+        <nav>
             <h1>Interactive Clock</h1>
+        </nav>
+        <div class="sidebar">
+            <h2>Change font</h2>
+            <div class="btn-group">
+                <button onclick="changeFont('sans')">Sans-Serif</button>
+                <button onclick="changeFont('orb')">Orbitron</button>
+            </div>
         </div>
-        <div class="menu">
-            <ul>
-                <li>Option one</li>
-                <li>Option two</li>
-            </ul>
-        </div>
-        <div class="main">
-            <div id="timezone"></div>
+        <main>
             <div id="clock"></div>
-        </div>
-        <div class="footer">
-            <footer>This is a footer</footer>
-        </div>
+        </main>
+        <footer>
+            Footer
+        </footer>
     </div>
 </body>
+<script src="script.js"></script>
+
 </html>
